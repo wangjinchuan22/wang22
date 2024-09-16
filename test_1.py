@@ -5,6 +5,7 @@ def singleton(cls):
         return getattr(cls,"instance_singleton")
     return wrapper
 
+
 @singleton
 class Test():
     def __init__(self):
