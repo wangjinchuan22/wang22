@@ -4,3 +4,14 @@ def singleton(cls):
             setattr(cls,"instance_singleton",cls(*args,**kwargs))
         return getattr(cls,"instance_singleton")
     return wrapper
+
+@singleton
+class Test():
+    def __init__(self):
+        pass
+
+if __name__ == "__main__":
+    a = Test()
+    b = Test()
+    print(a)
+    print(b)
