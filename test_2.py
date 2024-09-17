@@ -68,4 +68,4 @@ if __name__ == "__main__":
         p.start()
     for j in l:
         j.join()
-    print(n)
+    print("输出",n)
