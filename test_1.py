@@ -11,6 +11,8 @@ class Test():
     def __init__(self):
         pass
 
+print("wjc——test")
+
 if __name__ == "__main__":
     a = Test()
     b = Test()
