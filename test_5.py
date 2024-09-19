@@ -86,4 +86,82 @@
 # print(f"{year}年{month}月{day}日是当年的第{count_day}天")
 
 
-##冒泡排序
+"""
+猴子吃桃问题
+"""
+# p = 1
+# print(f"第十天还剩下{p}个桃子")
+# for i in range (9,0,-1):
+#     p = (p+1)*2
+#     print(f"第{i}天的桃子数量是{p}个")
+
+"""
+冒泡排序
+"""
+# import numpy as np
+# pop_list = np.random.randint(100,size = 6)
+# count = len(pop_list)
+# print("没有排序的列表",pop_list)
+# for i in range(0,count-1):
+#     for j in range(count-i-1):
+#         if pop_list[j] > pop_list[j+1]:   ##升序 ： >     降序  ：<
+#             pop_list[j],pop_list[j+1] = pop_list[j+1],pop_list[j]
+# print("排序后的列表",pop_list)
+
+"""
+选择排序
+"""
+import random as rd
+sec_list = [rd.randint(1,100)for i in range(8)]
+length = len(sec_list)
+print(f"未排序的列表:{sec_list}")
+for i in range(length-1):
+    mid_index = i
+    for j in range(i+1,length):
+        if sec_list[mid_index] > sec_list[j]:
+            mid_index = j
+    sec_list[mid_index],sec_list[i] = sec_list[i],sec_list[mid_index]
+    print(f"第{i}次循环结果{sec_list}")
+
+
+"""
+二分查找（有序数列）
+"""
+##纯算法模式
+# arr_list = [5,7,11,34,73,87,94]
+# number = 187
+# count = 0
+# left = 0
+# right = len(arr_list)-1
+# while left <= right:
+#     middle = (left+right)//2
+#     count += 1
+#     if number > arr_list[middle]:
+#         left = middle+1
+#     elif number < arr_list[middle]:
+#         right = middle-1
+#     else:
+#         print(f"数字{number}已经找到，索引值是{middle}")
+#         break
+#
+# else:
+#     print(f"数字{number}没有找到")
+# print(f"一共查找了{count}次")
+
+###递归函数的方式
+# arr_list = [5,7,11,34,73,87,94]
+# def binary_search(num,left,right):
+#     if left <= right:
+#         middle = (left+right)//2
+#         if num < arr_list[middle]:
+#             right = middle - 1
+#         elif num > arr_list[middle]:
+#             left  = middle + 1
+#         else:
+#             print(f"数字{num}已经找到，索引值是{middle}")
+#             return middle
+#         return binary_search(num,left,right)
+#     else:
+#         print(f"结束查询，{num}未找到")
+#         return -1
+# print(binary_search(187,0,6))
